@@ -21,10 +21,10 @@ public class Course {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name="ID")
+	@Column(name="Id")
 	private int courseId;
-	@Column(name="NAME")
+	@Column(name="Name")
 	private String courseName;
-	@Column(name="AUTHOR")
+	@Column(name="Author")
 	private String courseAuthor;
 }
