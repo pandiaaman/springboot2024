@@ -21,7 +21,7 @@ public class Streams {
 			System.out.println(s);
 		}
 		
-		
+		System.out.println("streams");
 	}
 
 }
