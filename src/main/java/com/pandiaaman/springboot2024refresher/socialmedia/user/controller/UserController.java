@@ -38,7 +38,7 @@ public class UserController {
 	
 	@PostMapping(path="/")
 	public ResponseEntity<User> save(@RequestBody User user){
-		User savedUser = dao.save(user);
+		User savedUser = dao.save(user); 
 		
 		//creating the URI of created user for the API consumer
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
