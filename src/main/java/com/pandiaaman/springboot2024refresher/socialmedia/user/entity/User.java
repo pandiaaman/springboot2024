@@ -27,8 +27,8 @@ public class User {
 	private String userId;
 	
 	//adding validation using @size
-	@Size(min=2)
+	@Size(min=2, message = "name should have atleast two characters")
 	private String userName;
-	@Past //birthdate are always in past
+	@Past(message = "age can not be in future") //birthdate are always in past
 	private LocalDate userBirthDate;
 }
