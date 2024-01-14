@@ -18,6 +18,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.pandiaaman.springboot2024refresher.socialmedia.user.dao.UserDaoService;
 import com.pandiaaman.springboot2024refresher.socialmedia.user.entity.User;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -42,7 +44,7 @@ public class UserController {
 	}
 	
 	@PostMapping(path="/")
-	public ResponseEntity<User> save(@RequestBody User user){
+	public ResponseEntity<User> save(@Valid @RequestBody User user){
 		User savedUser = dao.save(user);  
 		
 		//creating the URI of created user for the API co nsumer
