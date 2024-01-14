@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,7 +26,9 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private String userId;
 	
+	//adding validation using @size
+	@Size(min=2)
 	private String userName;
-	
+	@Past //birthdate are always in past
 	private LocalDate userBirthDate;
 }
