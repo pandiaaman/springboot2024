@@ -1,0 +1,9 @@
+>>> Generating documentation from the code
+	
+	Swagger and OpenAPI
+	- Swagger specification in 2011
+	- OpenAPI specification was built in 2016
+	- swagger ui: visualize and interact with api
+	
+	just add the dependency in the pom.xml and go to below link
+	(http://localhost:8082/swagger-ui.html) 	
