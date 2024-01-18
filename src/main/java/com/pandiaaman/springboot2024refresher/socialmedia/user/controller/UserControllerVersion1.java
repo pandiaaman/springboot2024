@@ -13,15 +13,30 @@ import com.pandiaaman.springboot2024refresher.socialmedia.user.dao.UserDaoServic
 import com.pandiaaman.springboot2024refresher.socialmedia.user.entity.User;
 
 @RestController
-@RequestMapping("/users/v1")
+@RequestMapping("/users")
 public class UserControllerVersion1 {
 
 	@Autowired
 	UserDaoService dao;
 	
-	@GetMapping(path="/")
+	@GetMapping(path="/url/v1/")
 	public ResponseEntity<List<User>> findAll(){
 		List<User> allUsers = dao.findAll();
 		return new ResponseEntity<List<User>>(allUsers, HttpStatus.OK);
 	} 
+	
+	
+	@GetMapping(path="/requestparam", params = "version=1")
+	public ResponseEntity<List<User>> findAllUsingRequestParameterVersioning(){
+		List<User> allUsers = dao.findAll();
+		return new ResponseEntity<List<User>>(allUsers, HttpStatus.OK);
+	} 
+	
+	@GetMapping(path="/headers", headers = "API-VERSION=1")
+	public ResponseEntity<List<User>> findAllUsingHeaderVersioning(){
+		List<User> allUsers = dao.findAll();
+		return new ResponseEntity<List<User>>(allUsers, HttpStatus.OK);
+	} 
+	
+	
 }
