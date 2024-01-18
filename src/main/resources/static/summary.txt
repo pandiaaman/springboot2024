@@ -19,3 +19,12 @@
 		com.fasterxml.jackson.dataformat -> jackson-dataformat-xml
 		
 		##THIS CAN SOMETIMES CREATE ISSUES WITH THE ADVANCED FEATURES	
+		
+	- to add support to multiple languages: internationalization : i18n
+		we have accept-language header
+		
+		to do this, we need to add messages.properties file in the resources folder
+		
+		
+>>> Versioning API		
+			
