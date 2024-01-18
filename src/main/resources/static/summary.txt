@@ -7,3 +7,15 @@
 	
 	just add the dependency in the pom.xml and go to below link
 	(http://localhost:8082/swagger-ui.html) 	
+	
+	
+>>> Content negotiation
+
+	XML and JSON support: any api user might expect
+	OR we might also want the result to go out in multiple different languages(french, hindi etc)
+	
+	- to add the xml support:
+		we only need to add the dependency
+		com.fasterxml.jackson.dataformat -> jackson-dataformat-xml
+		
+		##THIS CAN SOMETIMES CREATE ISSUES WITH THE ADVANCED FEATURES	
