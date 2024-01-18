@@ -1,5 +1,9 @@
 package com.pandiaaman.springboot2024refresher.helloworld;
 
+import java.util.Locale;
+
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,9 +15,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/helloworld")
 public class HelloWorldController {
 
+	
+	private MessageSource messageSource;
+	
+	public HelloWorldController(MessageSource msg) {
+		this.messageSource = msg;
+	}
+	
 	@GetMapping(path="/main")
 	private ResponseEntity<String> helloWorld(){
-		return new ResponseEntity<String>("hello world", HttpStatus.ACCEPTED);
+		Locale locale = LocaleContextHolder.getLocale();
+		//check the messages.properties file in resources folder
+		return new ResponseEntity<String>(messageSource.getMessage("good.morning.message", null, "Default Message", locale), HttpStatus.ACCEPTED);
+	}
+	
+	@GetMapping(path="/i18n")
+	private ResponseEntity<String> helloWorldI18n(){
+		return new ResponseEntity<String>("hello world", HttpStatus.OK);
 	}
 	
 	@GetMapping(path="/json")
@@ -42,6 +60,8 @@ public class HelloWorldController {
 		
 		return new ResponseEntity<HelloWorldPojo>(pojo, HttpStatus.ACCEPTED);
 	}
+	
+	
 	
 	//setting up path parameters:
 	// /users/{userid}/todos/{todoid}
