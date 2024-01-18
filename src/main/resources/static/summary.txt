@@ -26,5 +26,11 @@
 		to do this, we need to add messages.properties file in the resources folder
 		
 		
->>> Versioning API		
+>>> Versioning API
+
+	URI versioning: http://adf.com/users/v1
+	Request parameter versioning: http://asf.com/users?version=1
+	header versioning: http://asd.com/users   header: v1
+	media type versioning
+			
 			
