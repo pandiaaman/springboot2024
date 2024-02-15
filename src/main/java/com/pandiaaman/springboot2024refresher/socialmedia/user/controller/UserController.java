@@ -33,6 +33,10 @@ public class UserController {
 	@GetMapping(path="/{userId}")
 	public ResponseEntity<User> findOne(@PathVariable String userId){
 		User fetchedUser = dao.findOne(userId);
+		
+		if(fetchedUser == null) {
+			throw new UserNotFoundException("id : " + userId);
+		}
 		return new ResponseEntity<User>(fetchedUser, HttpStatus.OK);
 	}
 	
